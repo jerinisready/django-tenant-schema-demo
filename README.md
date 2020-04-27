@@ -128,10 +128,12 @@ ________________________________________________________________________________
 9. python  manage.py tenant_command shell
 
 Enter Tenant Schema ('?' to list schemas): **press**
+
     ```
     from apps.blog.models import Category
     Category(name="Press Release").save()
     ```
+    
 *Repeat this for each tenant!*
 
 10. python manage.py runserver
