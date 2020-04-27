@@ -1,0 +1,15 @@
+
+{% extends 'skeleton.html' %}
+{% block body_content %}
+<h5> Showing page from "{{ request.tenant.name }}  ( {{request.tenant.schema_name}} )"  </h5>
+
+<ol>
+    {% for object in object_list  %}
+        <li><a href="#">{{ object.title }}</a> </li>
+    {% empty %}
+        <li style="list-style-type:none"> No Blog's available currently</li>
+    {% endfor %}
+</ol>
+<a href="{% url 'blog-create-view' %}"> <button>Add New Blog </button></a>
+
+{% endblock %}

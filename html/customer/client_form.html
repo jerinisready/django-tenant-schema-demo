@@ -1,0 +1,39 @@
+{% extends 'skeleton.html' %}
+
+{% block body_title %}
+    Tenant Form
+{% endblock %}
+
+{% block body_content %}
+    <h3> ADMIN PANEL </h3>
+    <style>
+        form p {}
+        form p { width: 480px; display: flex; flex-direction: column;  }
+        form p label { width:50%;  display: flex; flex-direction: column }
+        form p input { width:50%; display: flex; flex-direction: column }
+        form p input[type=checkbox] ] { width:50%; display: inline; flex-direction: column;
+             padding-left:5px;
+            padding-right:5px;
+            border-radius:15px;
+            -webkit-appearance:button;
+         }
+         form p input#id_schema_name:after {
+            content: attr(value) ".local.tenant:8000";
+            font-size:12px;
+            color: #fff;
+
+         }
+    </style>
+
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Create New Tenant for Blog</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <input type="submit">
+    </form>
+
+
+
+{% endblock %}

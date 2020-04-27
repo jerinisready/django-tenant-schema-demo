@@ -1,0 +1,14 @@
+{% extends 'skeleton.html' %}
+{% block body_content %}
+    <h3> ADMIN PANEL </h3>
+
+    <ol>
+        {% for object in object_list %}
+        <li>
+            <a target="_blank" href="//{{ object.domain_url }}:8000">{{ object.name  }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+<a href="{% url 'client-create-form' %}"><button>Add New Blog Channel </button></a>
+
+{% endblock %}
